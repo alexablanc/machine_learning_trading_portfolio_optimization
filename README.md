@@ -33,7 +33,7 @@ airflow_project/
 │   └── llm_qlearner_trading_dag.py       # Main DAG definition
 ├── plugins/
 │   └── trading_pipeline/
-│       ├── QLearner.py                   # Your Dyna-Q implementation
+│       ├── QLearner.py                   # Dyna-Q implementation available upon request
 │       ├── indicators.py                 # BB%B, RSI, Momentum (yfinance-compatible)
 │       ├── llm_signal.py                 # OpenAI API signal generation
 │       ├── agent.py                      # State discretization + Q-Learner wrapper
@@ -92,9 +92,7 @@ To trigger it manually for testing, click the **Trigger DAG** button.
 ---
 
 ## How the Q-Learner Works in This Context
-
-The Q-Learner is your exact Dyna-Q implementation from the ML4T course, adapted for a daily Airflow loop:
-
+- **Disclaimer:** Not included — available upon employer request
 - **State space (3,000 states):** Combines 10 bins for BB %B + 10 bins for RSI + 10 bins for Momentum + 3 LLM signal values.
 - **Actions (3):** 0 = Short (-1000 shares), 1 = Cash (0 shares), 2 = Long (+1000 shares).
 - **Reward:** The daily return of JPM, signed by the position held: Long gets +return, Short gets -return, Cash gets 0.
