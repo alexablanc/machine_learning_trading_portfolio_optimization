@@ -92,7 +92,7 @@ To trigger it manually for testing, click the **Trigger DAG** button.
 ---
 
 ## How the Q-Learner Works in This Context
-- **Disclaimer:** Not included — available upon employer request
+- **QLearner.py Disclaimer:** Not included — available upon employer request
 - **State space (3,000 states):** Combines 10 bins for BB %B + 10 bins for RSI + 10 bins for Momentum + 3 LLM signal values.
 - **Actions (3):** 0 = Short (-1000 shares), 1 = Cash (0 shares), 2 = Long (+1000 shares).
 - **Reward:** The daily return of JPM, signed by the position held: Long gets +return, Short gets -return, Cash gets 0.
